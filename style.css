@@ -64,6 +64,7 @@ button:disabled {
   top: 0;
   right: 0;
   padding: 10px;
+  pointer-events: none;
 }
 .notification-container__hidden {
   display: none;
