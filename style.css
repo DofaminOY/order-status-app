@@ -80,6 +80,7 @@ button:disabled {
   animation: notificationOpen 0.3s ease-in-out;
   border-radius: 12px;
   color: #111827;
+ 
 }
 .notification--error {
   background: #ef4444;
@@ -113,6 +114,7 @@ button:disabled {
 
 .notification__close {
   cursor: pointer;
+  pointer-events: auto;
 }
 
 form {

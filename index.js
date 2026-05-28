@@ -19,6 +19,7 @@ const constructNotification = (title, text, type) => {
   `;
   return notification;
 };
+
 const closeNotification = (notification) => {
   console.log(notification);
   notification.parentElement.classList.add("notification--hidden");
@@ -26,6 +27,12 @@ const closeNotification = (notification) => {
     notification.parentElement.remove();
   }, 300);
 };
+
+notificationContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("notification__close")) {
+    closeNotification(e.target);
+  }
+});
 
 function createOrder() {
   return new Promise((resolve) => {
@@ -66,6 +73,7 @@ buttonPaid.onclick = () => {
 
   setButtonsState(true, false);
 };
+
 buttonSent.onclick = () => {
   notificationContainer.insertAdjacentHTML(
     "beforeend",
@@ -74,6 +82,7 @@ buttonSent.onclick = () => {
 
   setButtonsState(true, true);
 };
+
 buttonGet.onclick = () => {
   notificationContainer.insertAdjacentHTML(
     "beforeend",
